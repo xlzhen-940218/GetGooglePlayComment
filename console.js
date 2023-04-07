@@ -1,6 +1,14 @@
+/*
+* 首先，在网页上自动点击更多评论按钮
+* First, automatically click the More Comments button on the page
+*/
 var pages = document.getElementsByClassName('VfPpkd-vQzf8d');
 pages[pages.length-1].click();
 
+/*
+* 评论完全加载完毕，开始获取所有评论内容
+* Comments are fully loaded, start fetching all comment content
+*/
 function readAllComment(){
     var items = document.getElementsByClassName('odk6He')[0].children[0].children;
     var content = '';
@@ -11,7 +19,10 @@ function readAllComment(){
     }
     console.log(content);
 }
-
+/*
+* 这个函数在弹出的更多评论弹窗中不停的执行滚动到底部方法，等待所有评论完全加载
+* This function continuously executes the method of scrolling to the bottom in the pop-up more comment pop-up window, waiting for all comments to be fully loaded
+*/
 function scrollToBottom(){
     var page = document.getElementsByClassName('fysCi')[0];
     
@@ -21,10 +32,15 @@ function scrollToBottom(){
         page.scrollTop = page.scrollHeight;
         console.log("scrolling...",page.scrollTop);
         if(lastTop == page.scrollTop){
+            //load complete,start get all comment
             readAllComment();
             return;
         }
         setTimeout(scrollToBottom,1000);
     }
 }
+/*
+* 点击了更多评论按钮并等待1秒，开始执行scrollToBottom函数
+* Click the more comment button and wait for 1 second, start to execute the scrollToBottom function
+*/
 setTimeout(scrollToBottom,1000);

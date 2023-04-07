@@ -1,4 +1,5 @@
-document.getElementsByClassName('VfPpkd-vQzf8d')[11].click();
+var pages = document.getElementsByClassName('VfPpkd-vQzf8d');
+pages[pages.length-1].click();
 
 function readAllComment(){
     var items = document.getElementsByClassName('odk6He')[0].children[0].children;

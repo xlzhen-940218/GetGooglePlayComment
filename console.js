@@ -10,7 +10,7 @@ pages[pages.length-1].click();
 * 4.Comments are fully loaded, start fetching all comment content
 */
 function readAllComment(){
-    var items = document.getElementsByClassName('odk6He')[0].children[0].children;
+    var items = document.getElementsByClassName('odk6He')[0].children[1].children;
     var content = '';
     for(var i=0;i< items.length;i++){
         var time = items[i].getElementsByClassName('bp9Aid')[0].innerHTML;
